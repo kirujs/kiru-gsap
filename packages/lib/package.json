@@ -1,12 +1,12 @@
 {
-  "name": "kaioken-gsap",
+  "name": "kiru-gsap",
   "version": "1.1.0",
-  "description": "Tools for using GSAP in Kaioken, like useGSAP() which is a drop-in replacement for useLayoutEffect()/useEffect()",
+  "description": "Tools for using GSAP in Kiru, like useGSAP() which is a drop-in replacement for useLayoutEffect()/useEffect()",
   "main": "dist/index.js",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CrimsonChi/kaioken-gsap"
+    "url": "https://github.com/kirujs/kiru-gsap"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\"",
@@ -20,11 +20,11 @@
     }
   },
   "peerDependencies": {
-    "kaioken": ">=0.38.0",
+    "kiru": ">=0.50.0",
     "gsap": "^3.12.5"
   },
   "keywords": [
-    "kaioken",
+    "kiru",
     "gsap",
     "useeffect",
     "uselayouteffect",
@@ -33,6 +33,6 @@
     "greensock",
     "javascript"
   ],
-  "author": "CrimsonChi",
+  "author": "kirujs",
   "license": "ISC"
 }

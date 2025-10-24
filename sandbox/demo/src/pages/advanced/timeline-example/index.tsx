@@ -1,8 +1,8 @@
-import { useRef } from "kaioken"
+import { useRef } from "kiru"
 import gsap from "gsap"
-import { useGSAP } from "kaioken-gsap"
+import { useGSAP } from "kiru-gsap"
 
-export function TimelineExample() {
+export default function TimelineExample() {
   const container = useRef<HTMLDivElement>(null)
   const tl = useRef<gsap.core.Timeline>()
 

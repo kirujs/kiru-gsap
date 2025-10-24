@@ -1,12 +1,12 @@
-import { useRef } from "kaioken"
+import { useRef } from "kiru"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { ScrollSmoother } from "gsap/ScrollSmoother"
-import { useGSAP } from "kaioken-gsap"
+import { useGSAP } from "kiru-gsap"
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother)
 
-export function ScrollSmootherExample() {
+export default function ScrollSmootherExample() {
   const main = useRef<HTMLDivElement>(null)
   const smoother = useRef<globalThis.ScrollSmoother>()
 

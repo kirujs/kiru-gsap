@@ -1,17 +1,17 @@
-# Kaioken-GSAP
+# Kiru-GSAP
 
 > Based on [@gsap/react](https://www.npmjs.com/package/@gsap/react)
 
-<a href="https://gsap.com">GSAP</a> itself is **completely framework-agnostic** and can be used in any JS framework without any special wrappers or dependencies. This hook solves a few **Kaioken-specific** friction points so that you can just focus on the fun stuff. 🤘🏻
+<a href="https://gsap.com">GSAP</a> itself is **completely framework-agnostic** and can be used in any JS framework without any special wrappers or dependencies. This hook solves a few **Kiru-specific** friction points so that you can just focus on the fun stuff. 🤘🏻
 
 ## `useGSAP()`
 
-A drop-in replacement for <a href="https://kaioken.dev/docs/hooks/useEffect">`useEffect()`</a> or <a href="https://kaioken.dev/docs/hooks/useLayoutEffect">`useLayoutEffect()`</a> that automatically handles cleanup using <a href="https://gsap.com/docs/v3/GSAP/gsap.context()">`gsap.context()`</a>
+A drop-in replacement for <a href="https://kirujs.dev/docs/hooks/useEffect">`useEffect()`</a> or <a href="https://kirujs.dev/docs/hooks/useLayoutEffect">`useLayoutEffect()`</a> that automatically handles cleanup using <a href="https://gsap.com/docs/v3/GSAP/gsap.context()">`gsap.context()`</a>
 
 ```javascript
 import gsap from "gsap"
-import { useRef } from "kaioken"
-import { useGSAP } from "kaioken-gsap"
+import { useRef } from "kiru"
+import { useGSAP } from "kiru-gsap"
 
 gsap.registerPlugin(useGSAP) // register any plugins, including the useGSAP hook
 
@@ -72,12 +72,12 @@ useGSAP(
 - Safe to use in server-side rendering environments.
 - You may optionally define a `scope` for selector text, making it safer/easier to write code that doesn't require you to create a `useRef()` for each and every element you want to animate.
 - Defaults to using an empty dependency Array in its simplest form, like `useGSAP(() => {...})`.
-- Exposes convenient references to the `context` instance and the `contextSafe()` function as method parameters as well as object properties that get returned by the `useGSAP()` hook, so it's easier to set up standard Kaioken event handlers.
+- Exposes convenient references to the `context` instance and the `contextSafe()` function as method parameters as well as object properties that get returned by the `useGSAP()` hook, so it's easier to set up standard Kiru event handlers.
 
 ## Install
 
 ```bash
-npm install kaioken-gsap
+npm install kiru-gsap
 ```
 
 At the top of your code right below your imports, it's usually a good idea to register `useGSAP` as a plugin:
@@ -88,7 +88,7 @@ gsap.registerPlugin(useGSAP)
 
 ## Using callbacks or event listeners? Use `contextSafe()` and clean up!
 
-A function is considered "context-safe" if it is properly scoped to a <a href="https://gsap.com/docs/v3/GSAP/gsap.context()">`gsap.context()`</a> so that any GSAP-related objects created **while that function executes** are recorded by that `Context` and use its `scope` for selector text. When that `Context` gets reverted (like when the hook gets torn down or re-synchronizes), so will all of those GSAP-related objects. Cleanup is important in Kaioken and `Context` makes it simple. Otherwise, you'd need to manually keep track of all your animations and `revert()` them when necessary, like when the entire component gets unmounted/remounted. `Context` does that work for you.
+A function is considered "context-safe" if it is properly scoped to a <a href="https://gsap.com/docs/v3/GSAP/gsap.context()">`gsap.context()`</a> so that any GSAP-related objects created **while that function executes** are recorded by that `Context` and use its `scope` for selector text. When that `Context` gets reverted (like when the hook gets torn down or re-synchronizes), so will all of those GSAP-related objects. Cleanup is important in Kiru and `Context` makes it simple. Otherwise, you'd need to manually keep track of all your animations and `revert()` them when necessary, like when the entire component gets unmounted/remounted. `Context` does that work for you.
 
 The main `useGSAP(() => {...})` function is automatically context-safe of course. But if you're creating functions that get called **AFTER** the main `useGSAP()` function executes (like click event handlers, something in a `setTimeout()`, or anything delayed), you need a way to make those functions context-safe. Think of it like telling the `Context` when to hit the "record" button for any GSAP-related objects.
 
@@ -158,7 +158,7 @@ return (
 
 ## `scope` for selector text
 
-You can optionally define a `scope` in the `config` object as a <a href="https://kaioken.dev/docs/hooks/useRef">Kaioken Ref</a> and then any selector text in the `useGSAP()` <a href="https://gsap.com/docs/v3/GSAP/gsap.context()">`Context`</a> will be scoped to that particular Ref, meaning it will be limited to finding **descendants** of that element. This can greatly simplify your code. No more creating a Ref for every element you want to animate! And you don't need to worry about selecting elements outside your component instance.
+You can optionally define a `scope` in the `config` object as a <a href="https://kirujs.dev/docs/hooks/useRef">Kiru Ref</a> and then any selector text in the `useGSAP()` <a href="https://gsap.com/docs/v3/GSAP/gsap.context()">`Context`</a> will be scoped to that particular Ref, meaning it will be limited to finding **descendants** of that element. This can greatly simplify your code. No more creating a Ref for every element you want to animate! And you don't need to worry about selecting elements outside your component instance.
 
 ### Example using Refs (tedious) 😩
 

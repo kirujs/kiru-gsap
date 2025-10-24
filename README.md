@@ -1,6 +1,6 @@
-# kaioken-gsap
+# kiru-gsap
 
-Development monorepo template for **kaioken-gsap**.
+Development monorepo template for **kiru-gsap**.
 
 ## Structure
 
@@ -8,7 +8,7 @@ Development monorepo template for **kaioken-gsap**.
   - Contains workflows used by GitHub Actions.
 - `packages`
   - Contains the individual packages managed in the monorepo.
-  - [kaioken-gsap](https://github.com/CrimsonChi/kaioken-gsap/blob/main/packages/lib)
+  - [kiru-gsap](https://github.com/kirujs/kiru-gsap/blob/main/packages/lib)
 - `sandbox`
   - Contains example applications and random tidbits.
 

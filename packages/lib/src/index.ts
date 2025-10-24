@@ -1,11 +1,11 @@
 /**
- * @fileoverview Tools for using GSAP in Kaioken, like useGSAP() which is a drop-in replacement for useLayoutEffect()/useEffect()
+ * @fileoverview Tools for using GSAP in Kiru, like useGSAP() which is a drop-in replacement for useLayoutEffect()/useEffect()
  * @version 1.0.0
  * @license ISC
  * Based on the work of Jack Doyle, jack@greensock.com - (https://github.com/greensock/react/blob/main/src/index.js)
  */
 
-import { useCallback, useLayoutEffect, useRef, useState } from "kaioken"
+import { useCallback, useLayoutEffect, useRef, useState } from "kiru"
 import gsap from "gsap"
 
 type ContextSafeFunc = <T extends Function>(func: T) => T
@@ -20,7 +20,7 @@ export type UseGSAPReturn = {
 }
 
 export type UseGSAPConfig = {
-  scope?: Kaioken.MutableRefObject<Element | null> | Element | string
+  scope?: Kiru.MutableRefObject<Element | null> | Element | string
   dependencies?: unknown[]
   revertOnUpdate?: boolean
 }
