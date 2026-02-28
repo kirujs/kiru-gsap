@@ -1,6 +1,10 @@
 # kiru-gsap
 
-Development monorepo template for **kiru-gsap**.
+> **Deprecated.** This package is no longer maintained. With Kiru's current component API there’s no need for a dedicated lifecycle wrapper - use GSAP directly (e.g. `gsap.context()` and `onCleanup` / `onMount` in your components).
+
+---
+
+Development monorepo for **kiru-gsap**.
 
 ## Structure
 
